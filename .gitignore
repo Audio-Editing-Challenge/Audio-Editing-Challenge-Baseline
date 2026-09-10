@@ -1,0 +1,25 @@
+CLAUDE.md
+AGENTS.md
+docs/
+agent_scratch/
+openspec/
+.claude/
+
+# Python env / caches (agent-track baseline)
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# model weights, run outputs & logs
+ckpts/
+outputs/
+logs/
+
+# MMAE benchmark checkout + downloaded audio dataset (reproduce via README, not committed)
+MMAE/
+
+# unit tests (local-only, not part of the published baseline)
+tests/

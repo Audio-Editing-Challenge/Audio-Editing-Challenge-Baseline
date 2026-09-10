@@ -1,0 +1,38 @@
+[project]
+name = "audio-editing-agent-baseline"
+version = "0.1.0"
+description = "Agent-track baseline for the Audio Editing Challenge (ICASSP 2027)"
+requires-python = ">=3.10"
+# The router process is deliberately light: it talks to the AuK / SAM-Audio
+# FastAPI services over HTTP and runs pure-DSP edits locally. The heavy model
+# environments (AuK .venv, SAM-Audio conda env) are NOT managed here.
+dependencies = [
+    "openai>=1.40",
+    "librosa>=0.10",
+    "soundfile>=0.12",
+    "numpy>=1.24,<2",
+    "requests>=2.31",
+    "tqdm>=4.66",
+    "pydub>=0.25",
+]
+
+[project.optional-dependencies]
+# Only needed if you run the AuK edit service FROM this project's env instead of
+# the AuK checkout's own .venv (not recommended). Prefer the AuK .venv.
+service = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "python-multipart>=0.0.9",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent"]
+
+[tool.pytest.ini_options]
+# src/ layout: put it on sys.path so tests import `agent` and the bare `mmae_io` module.
+pythonpath = ["src"]
+
