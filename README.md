@@ -97,7 +97,7 @@ Set up and run:
 Results were evaluated locally with Qwen3-Omni-30B-A3B-Instruct.
 
 | Baseline | Scope | IFR | CR | EMR |
-| --- | --- | ---: | ---: | ---: |
+| --- | --- | :---: | :---: | :---: |
 | Single Model | Single subset, 1003 samples | 42.12% | 75.78% | 7.58% |
 | Agent | Full benchmark, 2000 samples | 44.06% | 74.63% | 7.45% |
 
