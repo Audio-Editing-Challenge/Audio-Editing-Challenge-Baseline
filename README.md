@@ -4,7 +4,7 @@ Reproducible baselines for the [ICASSP 2027 Audio Editing Challenge](https://aud
 
 | Track | Baseline | Entry point |
 | --- | --- | --- |
-| Single Model | AuK base model with Prompt Enhancer disabled | `run_single_mmae.py` |
+| Single Model | [AuK](https://github.com/Tencent-Hunyuan/AuK) base model with Prompt Enhancer disabled | `run_single_mmae.py` |
 | Agent | LLM router with DSP, SAM-Audio and AuK tools | `run_agent_mmae.py` |
 
 Both tracks use the same setup, launch and output format.
@@ -30,7 +30,7 @@ MMAE/wav/
 
 ## Single Model Track
 
-This baseline uses the AuK base checkpoint as a single end-to-end model. Prompt Enhancer is disabled, and the output duration matches the input duration.
+This baseline uses the [AuK](https://github.com/Tencent-Hunyuan/AuK) base checkpoint as a single end-to-end model. Prompt Enhancer is disabled, and the output duration matches the input duration.
 
 Set the AuK repository path if it is not in the default location:
 
